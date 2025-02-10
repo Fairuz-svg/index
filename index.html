@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untukmu Sayang ❤️</title>
+    <style>
+        body {
+            background: #131b21;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        svg {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff5e78;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Untukmu Sayang ❤️</h1>
+
+    <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <path fill="none" stroke="white" stroke-width="2" d="M50 100 Q75 50 100 100 T150 100"/>
+            <circle cx="50" cy="100" r="5" fill="pink"/>
+            <circle cx="150" cy="100" r="5" fill="pink"/>
+        </svg>
+    </div>
+
+    <div id="status">Mengecek server...</div>
+
+    <script>
+        fetch("http://IP_VPS_KAMU:3000/api/data")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("status").innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById("status").innerText = "Gagal terhubung ke server 😢";
+            });
+    </script>
+
+</body>
+</html>
