@@ -50,7 +50,7 @@
     <div id="status">Mengecek server...</div>
 
     <script>
-        fetch("http://IP_VPS_KAMU:3000/api/data")
+        fetch("http://178.128.16.239:3000/api/data")
             .then(response => response.json())
             .then(data => {
                 document.getElementById("status").innerText = data.message;
